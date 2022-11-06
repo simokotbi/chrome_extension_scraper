@@ -1,0 +1,20 @@
+{
+    "name": "Page scraper",
+    "action": {},
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "scraping web pages",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "web_accessible_resources": [{
+      "resources": ["data/links.json"],
+      "matches": ["<all_urls>"]
+    }]
+   
+  }
