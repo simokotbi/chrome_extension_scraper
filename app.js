@@ -25,18 +25,17 @@ function readeLinks(){
         urls.map(async(element)=>{
 
             // document.createElement("a");
-            
+           
                 //do what you need here
-               await window.open(JSON.stringify(element.url).slice(1, -1),"_blank");
+               //await window.open(JSON.stringify(element.url).slice(1, -1),"_blank");
         // document.innerHTML+='<a class="mylink"  download>kkllklklkklkklklkllklkkllkkk</a>'
-        var a= document.createElement("a");
-        a.download="download";
-         document.querySelector("#__next").appendChild(a);
-        
-         
-         a.href=JSON.stringify(element.url).slice(1, -1);
-       
-         a.click();
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = JSON.stringify(element.url).slice(1, -1);
+        a.download = 'download.html';
+        document.head.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(JSON.stringify(element.url).slice(1, -1));
          })
        
     })
