@@ -28,13 +28,14 @@ function readeLinks(){
            
                 //do what you need here
                //await window.open(JSON.stringify(element.url).slice(1, -1),"_blank");
-        // document.innerHTML+='<a class="mylink"  download>kkllklklkklkklklkllklkkllkkk</a>'
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.href = JSON.stringify(element.url).slice(1, -1);
+               window.open(JSON.stringify(element.url).slice(1, -1),"_blank");
+               document.body.innerHTML+='<a class="mylink"  download>kkllklklkklkklklkllklkkllkkk</a>'
+         let a= document.querySelector(".mylink");
+        a.href = JSON.stringify(window.URL);
+        
         a.download = 'download.html';
-        document.head.appendChild(a);
-        a.click();
+        
+       a.click();
         window.URL.revokeObjectURL(JSON.stringify(element.url).slice(1, -1));
          })
        
